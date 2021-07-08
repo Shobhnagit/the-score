@@ -2,6 +2,7 @@ package qaAndroid.theScoreAutomation;
 
 import org.openqa.selenium.Dimension;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.time.Duration;
@@ -24,7 +25,7 @@ import qaAndroid.PageObjects.LeaguePageObjects;
 
 		
 			
-			@Test(dataProvider="InputData", dataProviderClass=TestData.class)		
+			@Test(dataProvider="InputData")		
 			public void amenityValidation(String input) throws InterruptedException, IOException {
 			// TODO Auto-generated method stub
 
@@ -133,7 +134,28 @@ import qaAndroid.PageObjects.LeaguePageObjects;
 			
 			
 		}
+			
+			
+			
+			
+			
+			@DataProvider(name="InputData")
+			public Object[][] getDataforEditField() {
+				
+				
+				Object[][] obj = new Object[][]
+						{
+				
+					{"NHL HOCKEY"}
+				
+				
+			};
+			
+			
+			return obj;
 
+	}
+			
 	}
 
 
